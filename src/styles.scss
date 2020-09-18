@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+	font-family: "Fira Sans", serif;  
+	color: white;  
+	margin: 0;
+	background: url("assets/res/background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100%;
+	width: 100%; 
+	scroll-behavior: smooth;
+}
+
+h2 {
+	text-align: center; 
+	letter-spacing: 5px;
+	padding-top: 15px; 
+	padding-bottom: 10px;
+	margin: 0; 
+}
+
+.background-container {
+	background-color: rgba(0,38,87,0.75);
+	display: block; 
+}
+
+#h-full {
+	opacity: 0.6;
+}
+
+#h-shortened {
+	opacity: 0.6;
+	display: none;
+}
+
+.navbar .button { 
+	float: left;
+	display: block;	
+	color: rgba(241,241,241,1);
+	padding: 16px 16px 26px 16px;		
+	text-decoration: none;
+} 
+
+main { 
+	margin-top: 20px;
+	min-height: 79vh;
+} 
+
+.content_container {
+	font-family: "Fira Sans", serif; 
+	font-size: 1.2rem;
+	width: 80%; 
+	box-sizing: border-box;
+	display: inline-block; 
+	text-align: center;
+	min-height: 500px; 
+	margin: 40px; 
+	margin-bottom: 0;
+	border-radius: 10px;
+	padding: 30px; 
+	padding-top: 0;
+	padding-bottom: 50px;
+	color: black;
+	background-color: rgba(206,217,237,1);
+	line-height: 28pt;
+}
+
+.content_container h2 {
+	font-size: 2.5em;
+	padding: 60px; 
+	padding-bottom: 10px; 
+	padding-top: 80px; 
+}
+
+.content_container h3 {
+	font-size: 1.75em;
+	font-weight: normal;
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+}
+
+.line-break {
+	border-top: 2px solid steelblue;
+	width: 250px;
+	margin-bottom: 40px; 
+}
+
+@media screen and (max-width: 500px) {
+	#h-full {
+		display: none;
+	}
+	#h-shortened {
+		display: inline; 
+	}
+	.column {
+		width: 100%;
+	}
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

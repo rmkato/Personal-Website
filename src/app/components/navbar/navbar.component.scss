@@ -1,0 +1,90 @@
+.navbar {
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	min-height: 62px; 
+	z-index: 9; 
+	background-color: black; 
+	border-bottom-left-radius: 5px; 
+	border-bottom-right-radius: 5px; 
+}
+
+.navbar a {
+	text-align: center;
+	background-color: black; 
+	font-weight: bolder; 
+	z-index: 3;
+}
+
+.navbar a:hover {
+	background-color: silver;
+	color: black; 
+}
+
+#home_button {
+	margin-left: 5%;
+}
+
+#facebook_button {
+	margin-right: 5%;
+}
+
+.button-image {
+	float: right; 
+	display: block;   
+	padding: 10px 10px;
+}
+
+.gradient1 {
+	height: 10px; 
+	width: 100%; 
+	position: absolute;
+	bottom: 0;
+	border-bottom: 2px solid black;
+	background: linear-gradient(
+		to right, 
+		royalblue 8%, 
+		antiquewhite 8%, 
+		antiquewhite 16%,
+		salmon 16%, 
+		salmon 24%, 
+		steelblue 24%,
+		steelblue 32%,
+		royalblue 32%, 
+		royalblue 40%, 
+		antiquewhite 40%, 
+		antiquewhite 48%,
+		salmon 48%, 
+		salmon 56%, 
+		steelblue 56%,
+		steelblue 64%,
+		royalblue 64%, 
+		royalblue 73%,
+		antiquewhite 73%, 
+		antiquewhite 81%,
+		salmon 81%, 
+		salmon 90%, 
+		steelblue 90%,
+		steelblue 100%,
+		royalblue 100%
+	);
+}
+
+.gradient2 {
+	height: 10px; 
+	width: 100%; 
+	position: absolute;
+	bottom: 0;
+	border-bottom: 2px solid black;
+	background:	royalblue 8%;
+}
+
+@media screen and (max-width: 430px) {
+	#facebook_button {
+		display: none;
+	}
+	#home_button {
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,30 @@
+<div class="background-container" style="text-align: center;">
+    <!-- HEADER --> 
+    <header>
+        <div style="font-size: 42px; text-align: center; padding-top: 10px; padding-bottom: 15px;">
+            <span style="font-weight:bolder;">Robotics Visualization Project</span>
+        </div>
+    </header>
+
+    <div id="robot-project" class="content_container" style="color: black; background-color: rgba(206,217,237,1); margin-top: 10px;">
+        <div class="left-col">
+            <h2 style="font-size: 2em; letter-spacing: 1px; padding-top: 0; padding-left: 0; padding-right: 0; padding-bottom: 10px;">Commands</h2>
+            <button mat-raised-button (click)="command('cmd1')">Command 1</button><br>
+            <button mat-raised-button (click)="command('cmd2')">Command 2</button><br>
+            <button mat-raised-button (click)="command('cmd3')">Command 3</button><br>
+            <button mat-raised-button (click)="command('cmd4')">Command 4</button>
+        </div>
+        <hr id="linebreak2">
+        <div class="right-col">  
+            <div style="font-weight: bold">Status:</div>
+            <div class="status" [innerHTML]="status"></div> 
+            <div style="font-weight: bold">Response:</div> 
+            <div class="response" [innerHTML]="response"></div>
+            <div style="font-weight: bold">Position:</div> 
+            <div id="position" class="position" style="text-align: center;">
+                {{position_current}}
+                <div id="renderContainer" style="margin: auto;"></div>
+            </div>
+        </div>        
+    </div>
+</div>

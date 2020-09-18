@@ -1,0 +1,171 @@
+a {
+	text-decoration: none;
+}
+
+.links {
+	text-align: center; 
+	width: 280px;
+	margin: auto;	
+	padding-top: 15px;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.links span {
+	color: antiquewhite;
+	text-decoration: none; 
+}
+
+.links span:hover {
+	color: lightsalmon;
+}
+
+.image-carousel {
+	width: 75%;
+	margin: auto;
+}
+
+.row {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.row:after {
+	content: "";
+	display: table; 
+	clear: both;
+}
+
+.row .col-third {
+	text-align: center; 
+	width: 32%;
+	float: left;
+}
+
+.row .col-two-thirds {
+	text-align: justify;
+	line-height: 18pt; 
+	width: 62%;
+	float: left; 
+	margin-bottom: 60px; 
+	padding-top: 15px; 
+	padding-left: 20px; 
+}
+
+.col1 {
+	float: left;
+	width: 30%;
+	padding-top: 40px; 
+}
+
+.col2 {
+	text-align: center; 
+	width: 60%; 
+	float: left; 
+	padding-left: 60px;
+	padding-right: 30px;
+}
+
+.row .column {
+	width: 50%;
+	float: left; 
+}
+
+.row .column .info-list {
+	text-align: left; 
+	padding-left: 35%;
+	list-style-type: circle;
+}
+
+.project-description {
+	text-align: justify; 
+	width: 60%;
+	margin: auto; 
+	line-height: 16pt; 
+	margin-bottom: 50px;
+}
+
+#projects img {
+	width: 35%;
+	height:35%;
+	border: 6px solid black;
+	margin-bottom: 30px;
+}
+
+#header-br {
+	display: none;
+}
+
+@media screen and (max-width: 420px) {
+	#header-br {
+		display: inline;
+	}
+	.image-carousel {
+		width: 90%;
+	}
+	.project-description {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.row .column {
+		width: 100%;
+	}
+	.hyphen {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.links {
+		z-index: 0;
+	}
+
+	.col1 {
+		width: 100%;
+		padding-top: 0;
+	}
+	
+	.col2 {
+		width: 100%;
+		padding-left: 0; 
+	}
+	
+	.img1 {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 70%; 
+	}
+	
+	#projects img {
+		width: 60%;
+		height: 60%;
+	}
+	
+	#textbox1 {
+		width: 100%;
+	}
+	
+	#textbox2 {
+		width: 100%;
+	}
+	
+	.row .col-third {
+		width: 100%;
+	}
+	
+	.row .col-two-thirds {
+		width: 100%;
+		padding-left: 0;
+	}
+	
+	.content_container h3 {
+		margin-top: 20px; 
+		margin-bottom: 10px; 
+	}
+}
