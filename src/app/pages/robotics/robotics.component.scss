@@ -60,10 +60,6 @@ input {
     text-align: center;
 }
 
-#linebreak2 {
-    display: none;
-}
-
 @media screen and (max-width: 910px) {
     .left-col {
         width: 100%;
@@ -71,12 +67,6 @@ input {
     }
     .right-col {
         width: 100%;
-    }
-    #linebreak1 {
-        display: none;
-    }
-    #linebreak2 {
-        display: inline;
     }
     input {
         width: 50%;
