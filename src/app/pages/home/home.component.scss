@@ -25,11 +25,11 @@ a {
 .image-carousel {
 	width: 75%;
 	margin: auto;
+	margin-bottom: 20px;
 }
 
 .row {
 	width: 100%;
-	margin-bottom: 30px;
 }
 
 .row:after {
@@ -38,20 +38,23 @@ a {
 	clear: both;
 }
 
-.row .col-third {
-	text-align: center; 
-	width: 32%;
+.row .col-4 {
+	box-sizing: border-box;
+	width: 24%;
 	float: left;
+	padding-left: 2%;
+	padding-right: 2%;
 }
 
-.row .col-two-thirds {
-	text-align: justify;
-	line-height: 18pt; 
-	width: 62%;
+.row .column {
+	width: 50%;
 	float: left; 
-	margin-bottom: 60px; 
-	padding-top: 15px; 
-	padding-left: 20px; 
+}
+
+.row .column .info-list {
+	text-align: left; 
+	padding-left: 35%;
+	list-style-type: circle;
 }
 
 .col1 {
@@ -68,20 +71,9 @@ a {
 	padding-right: 30px;
 }
 
-.row .column {
-	width: 50%;
-	float: left; 
-}
-
-.row .column .info-list {
-	text-align: left; 
-	padding-left: 35%;
-	list-style-type: circle;
-}
-
 .project-description {
 	text-align: justify; 
-	width: 60%;
+	width: 75%;
 	margin: auto; 
 	line-height: 16pt; 
 	margin-bottom: 50px;
@@ -96,6 +88,11 @@ a {
 
 #header-br {
 	display: none;
+}
+
+#education {
+	line-height: normal;
+	font-size: 1rem;
 }
 
 @media screen and (max-width: 420px) {
@@ -116,6 +113,10 @@ a {
 	}
 	.hyphen {
 		display: none;
+	}
+	.row .col-4 {
+		width: 50%;
+		margin-bottom: 40px;
 	}
 }
 
