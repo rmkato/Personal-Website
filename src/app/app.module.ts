@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
 import { NgImageSliderModule } from 'ng-image-slider';
+import { ResumeComponent } from './pages/resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     RoboticsComponent,
     FooterComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,11 @@
 	color: black; 
 }
 
+.navbar a:focus {
+	color: lightsalmon;
+	background-color: black;
+}
+
 .navbar .button { 
 	text-align: center;
 	background-color: black; 
@@ -41,6 +46,11 @@
 	margin-top: 15px;
 	padding: 5px;
 	border-radius: 5px;
+}
+
+#toggleNavButton:hover {
+	color: lightsalmon;
+	background-color: black;
 }
 
 #navIcon {
@@ -110,7 +120,7 @@
 	}
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1150px) {
 	.navbar-buttons {
 		display: none;
 	}
