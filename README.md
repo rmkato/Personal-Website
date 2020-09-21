@@ -1,27 +1,16 @@
-# RyankatoWebsite
-
+# Ryan Kato's Personal Website
+Source code for my personal website that showcases my education and projects, including links to Github.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+
+View my website here: <a target="_blank" rel="noopener noreferrer" href="http://ryankato.com">ryankato.com</a>
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Built using: 
+* <a target="_blank" rel="noopener noreferrer" href="https://angular.io/">Angular</a>
+* <a target="_blank" rel="noopener noreferrer" href="https://jquery.com/">JQuery</a>
+* <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/">Three.js</a> for data visualization (for one of my projects) 
+* <a target="_blank" rel="noopener noreferrer" href="https://www.namecheap.com/">Namecheap</a> for the domain and hosting
+* <a target="_blank" rel="noopener noreferrer" href="https://git-scm.com/">Git</a> for source control
