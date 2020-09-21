@@ -1,5 +1,5 @@
-# RyankatoWebsite
-
+# Ryan Kato's Personal Website
+Source code for my personal website that showcases my education and projects, including links to Github.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
 View my website here: <a target="_blank" rel="noopener noreferrer" href="http://ryankato.com">ryankato.com</a>
