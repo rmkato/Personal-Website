@@ -1,5 +1,10 @@
-a {
-	text-decoration: none;
+#h-full {
+	opacity: 0.6;
+}
+
+#h-shortened {
+	opacity: 0.6;
+	display: none;
 }
 
 .links {
@@ -67,7 +72,7 @@ a {
 	text-align: center; 
 	width: 60%; 
 	float: left; 
-	padding-left: 60px;
+	padding-left: 55px;
 	padding-right: 30px;
 }
 
@@ -107,6 +112,15 @@ a {
 	}
 }
 
+@media screen and (max-width: 500px) {
+	#h-full {
+		display: none;
+	}
+	#h-shortened {
+		display: inline; 
+	}
+}
+
 @media screen and (max-width: 830px) {
 	.row .column {
 		width: 100%;
@@ -138,8 +152,7 @@ a {
 	.img1 {
 		float: none;
 		display: block;
-		margin-left: auto;
-		margin-right: auto;
+		margin: auto;
 		width: 70%; 
 	}
 	
