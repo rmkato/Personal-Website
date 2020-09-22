@@ -1,3 +1,4 @@
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -51,9 +52,24 @@ export class HomeComponent implements OnInit {
     alt: 'datastickers-pic-5',
   }];
 
-  constructor() { }
+  constructor() {
+    window.addEventListener('scroll', this.checkPosition);
+  }
 
   ngOnInit() {
+    this.checkPosition();
+  }
+
+  checkPosition() {
+    var elements = document.querySelectorAll('.hidden');
+    for (var i=0; i < elements.length; i++) {
+      var element = elements[i];
+      var positionFromTop = elements[i].getBoundingClientRect().top;
+      if (positionFromTop - window.innerHeight <= 0) {
+        element.classList.add('fade-in-element');
+        element.classList.remove('hidden');
+      }
+    }
   }
 
   scrollIntoView(id) {
