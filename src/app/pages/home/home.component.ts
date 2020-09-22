@@ -63,11 +63,9 @@ export class HomeComponent implements OnInit {
   checkPosition() {
     var elements = document.querySelectorAll('.hidden');
     for (var i=0; i < elements.length; i++) {
-      var element = elements[i];
-      var positionFromTop = elements[i].getBoundingClientRect().top;
-      if (positionFromTop - window.innerHeight <= 0) {
-        element.classList.add('fade-in-element');
-        element.classList.remove('hidden');
+      if (elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {
+        elements[i].classList.add('fade-in-element');
+        elements[i].classList.remove('hidden');
       }
     }
   }
