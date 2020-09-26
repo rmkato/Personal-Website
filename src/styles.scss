@@ -3,7 +3,7 @@ html, body {
 	font-family: "Fira Sans", serif;  
 	color: white;  
 	margin: 0;
-	background: url("assets/res/background.jpg");
+	background: url("./assets/background.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -68,4 +68,17 @@ main {
 	border-top: 2px solid steelblue;
 	width: 150px;
 	margin-bottom: 40px; 
+}
+
+@keyframes fade-in {
+	from {opacity: 0; transform: scale(.7,.7)}
+	to {opacity: 1;}
+}
+
+.fade-in-element {
+	animation: fade-in 1.4s;
+}
+
+.hidden {
+	opacity: 0;
 }
