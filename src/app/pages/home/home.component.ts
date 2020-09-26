@@ -61,6 +61,7 @@ export class HomeComponent implements OnInit {
   }
 
   checkPosition() {
+    // Adds slide-in animation to all elements with class='hidden'
     var elements = document.querySelectorAll('.hidden');
     for (var i=0; i < elements.length; i++) {
       if (elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {

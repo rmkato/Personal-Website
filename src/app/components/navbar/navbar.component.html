@@ -13,7 +13,7 @@
         <a id="linkedinButton" class="buttonImage" href="https://www.linkedin.com/in/ryan-kato-8b5702b9/" target="_blank"> <img src="assets/linkedin_icon.png" width=33 height=33 alt="LinkedIn"> </a> 
         <br>
     </div>
-    <div class="navbar-expanded" *ngIf="navbarToggle" [@slideInOut]>
+    <div class="navbar-expanded" *ngIf="navbarToggle" @slideAnimation>
         <a id="home_button_expanded" class="button_expanded" routerLink="/home" routerLinkActive="active" (click)="toggleNavbar()">Home</a>
         <a id="resumeButton_expanded" class="button_expanded" routerLink="/resume" routerLinkActive="active" (click)="toggleNavbar()">Resume</a>
         <a id="contact_button_expanded" class="button_expanded" routerLink="/contact" routerLinkActive="active" (click)="toggleNavbar()">Contact</a>
