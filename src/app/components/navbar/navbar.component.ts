@@ -6,13 +6,14 @@ import { trigger, transition, animate, style } from '@angular/animations';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   animations: [
-    trigger('slideInOut', [
+    trigger('slideAnimation', [
       transition(':enter', [
-        style({transform: 'translateY(-100%'}),
-        animate('200ms ease-in', style({transform: 'translateY(0%)'}))
+        style({opacity: 0}),
+        animate('300ms', style({opacity: 1}))
       ]),
       transition(':leave', [
-        animate('200ms ease-in', style({transform: 'translateY(-100%)'}))
+        style({opacity: 1}),
+        animate('100ms', style({opacity: 0}))
       ])
     ])
   ]

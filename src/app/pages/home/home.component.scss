@@ -27,6 +27,13 @@
 	color: lightsalmon;
 }
 
+.profilePicture {
+	width: 100%; 
+	height: 100%; 
+	border-radius: 20px; 
+	max-width: 300px;
+}
+
 .image-carousel {
 	width: 75%;
 	margin: auto;
@@ -100,46 +107,6 @@
 	font-size: 1rem;
 }
 
-@media screen and (max-width: 420px) {
-	#header-br {
-		display: inline;
-	}
-	.image-carousel {
-		width: 90%;
-	}
-	.project-description {
-		width: 90%;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	#h-full {
-		display: none;
-	}
-	#h-shortened {
-		display: inline; 
-	}
-}
-
-@media screen and (max-width: 650px) {
-	.links {
-		z-index: 0;
-	}
-}
-
-@media screen and (max-width: 830px) {
-	.row .column {
-		width: 100%;
-	}
-	.hyphen {
-		display: none;
-	}
-	.row .col-4 {
-		width: 50%;
-		margin-bottom: 40px;
-	}
-}
-
 @media screen and (max-width: 980px) {
 	.col1 {
 		width: 100%;
@@ -151,7 +118,7 @@
 		padding-left: 0; 
 	}
 	
-	.img1 {
+	.profilePicture {
 		float: none;
 		display: block;
 		margin: auto;
@@ -183,5 +150,48 @@
 	.content_container h3 {
 		margin-top: 20px; 
 		margin-bottom: 10px; 
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.row .column {
+		width: 100%;
+	}
+	.hyphen {
+		display: none;
+	}
+	.row .col-4 {
+		width: 50%;
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.links {
+		z-index: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#h-full {
+		display: none;
+	}
+	#h-shortened {
+		display: inline; 
+	}
+}
+
+@media screen and (max-width: 420px) {
+	#header-br {
+		display: inline;
+	}
+	#h-shortened {
+		display: none;
+	}
+	.image-carousel {
+		width: 90%;
+	}
+	.project-description {
+		width: 90%;
 	}
 }
