@@ -107,6 +107,44 @@
 	font-size: 1rem;
 }
 
+#projectControlBar {
+	position: fixed; 
+	top: 25vh;
+	right: 10%;
+}
+
+.projectControl {
+	height: 30px;
+	width: 8px;
+	margin-top: 15px;
+	background-color: lightslategray;
+	color: black;
+}
+
+.projectControl:hover {
+	cursor: pointer;
+}
+
+@keyframes setActive {
+	from {background-color: lightslategray; transform: scale(.7,.7)}
+	to {background-color: royalblue}
+}
+
+@keyframes setInactive {
+	from {background-color: royalblue; transform: scale(.7,.7)}
+	to {background-color: lightslategray}
+}
+
+.active {
+	animation: setActive 0.5s;
+	background-color: royalblue;
+}
+
+.inactive {
+	animation: setInactive 0.5s;
+	background-color: lightslategray;
+}
+
 @media screen and (max-width: 980px) {
 	.col1 {
 		width: 100%;

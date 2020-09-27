@@ -79,6 +79,20 @@ main {
 	animation: fade-in 0.5s;
 }
 
+.fade-in-element-fast {
+	animation: fade-in 0.25s;
+}
+
 .hidden {
+	opacity: 0;
+}
+
+@keyframes fade-out {
+	from {opacity: 1; transform: scale(.7,.7)}
+	to {opacity: 0;}
+}
+
+.fade-out-element {
+	animation: fade-out 0.5s;
 	opacity: 0;
 }
