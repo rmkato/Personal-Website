@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  projectBarVisible: boolean;
 
   notaryWebsiteProjectImages: Array<object> = [{
     image: 'assets/NotaryWebsite.jpg',
@@ -53,6 +54,7 @@ export class HomeComponent implements OnInit {
 
   constructor() {
     window.addEventListener('scroll', this.checkPosition);
+    this.projectBarVisible = false;
   }
 
   ngOnInit() {
@@ -63,14 +65,47 @@ export class HomeComponent implements OnInit {
     var elements = document.querySelectorAll('.hidden');
     for (var i=0; i < elements.length; i++) {
       if (elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {
-        elements[i].classList.add('fade-in-element');
+        if (elements[i].id == 'projectControlBar') {
+          elements[i].classList.add('fade-in-element-fast')
+        } else {
+          elements[i].classList.add('fade-in-element');
+        }
         elements[i].classList.remove('hidden');
       }
     }
+    var projects = document.getElementById('projects');
+    if (projects.getBoundingClientRect().top-150 > 0) {
+      document.getElementById('projectControlBar').classList.add('hidden');
+      document.getElementById('projectControlBar').classList.remove('fade-in-element-fast');
+    }
+  }
+
+  projectControlSelector(id) {
+    this.scrollProjectIntoView(id);
+    this.setActiveProject('projectControl-'+id);
   }
 
   scrollIntoView(id) {
     document.getElementById(id).scrollIntoView();
+  }
+
+  scrollProjectIntoView(id) {
+    var position = document.getElementById(id).getBoundingClientRect().top + window.pageYOffset - 50;
+    window.scrollTo({top: position})
+  }
+
+  setActiveProject(projectSelector) {
+    var controlBarChildren = document.getElementById('projectControlBar').children
+    for (var i=0; i < controlBarChildren.length; i++) {
+      if (controlBarChildren[i].id == projectSelector) {
+        controlBarChildren[i].classList.remove('inactive');
+        controlBarChildren[i].classList.add('active');
+      }
+      else if (controlBarChildren[i].classList.contains('active')) {
+        controlBarChildren[i].classList.remove('active');
+        controlBarChildren[i].classList.add('inactive');
+      }
+    }
   }
 
 }
