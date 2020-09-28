@@ -62,6 +62,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.getElementById('about').classList.add('fade-in-element');
+    document.getElementById('about').classList.remove('hidden');
     setTimeout(function() {
       this.setProjectPositions();
       this.checkPosition();
@@ -79,11 +81,7 @@ export class HomeComponent implements OnInit {
     var elements = document.querySelectorAll('.hidden');
     for (var i=0; i < elements.length; i++) {
       if (elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {
-        if (elements[i].id == 'projectControlBar') {
-          elements[i].classList.add('fade-in-element-fast')
-        } else {
-          elements[i].classList.add('fade-in-element');
-        }
+        elements[i].classList.add('fade-in-element')
         elements[i].classList.remove('hidden');
       }
     }
