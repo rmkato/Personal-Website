@@ -7,10 +7,11 @@ import { resolve } from 'url';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  projectBarVisible: boolean;
   p1_pos: number;
   p2_pos: number;
   p3_pos: number;
+  projectElement;
+  projectBarElement;
 
   notaryWebsiteProjectImages: Array<object> = [{
     image: 'assets/NotaryWebsite.jpg',
@@ -57,39 +58,52 @@ export class HomeComponent implements OnInit {
   }];
 
   constructor() {
-    window.addEventListener('scroll', () => this.checkPosition());
-    this.projectBarVisible = false;
   }
 
   ngOnInit() {
-    document.getElementById('about').classList.add('fade-in-element');
-    document.getElementById('about').classList.remove('hidden');
+    // Set positions after 1s so DOM content loads first
     setTimeout(function() {
       this.setProjectPositions();
-      this.checkPosition();
     }.bind(this), 1000);
+
+    // Animate the 'about' section when the page loads
+    document.getElementById('about').classList.add('fade-in-element');
+    document.getElementById('about').classList.remove('hiddenUntilAnimation');
+
+    // Set global references to project element and add checkPosition callback on 'scroll' event
+    $(window).on('load',()=>{
+      this.projectBarElement = document.getElementById('projectControlBar');
+      this.projectElement = document.getElementById('projects')
+      window.addEventListener('scroll', () => this.checkPosition());
+    })    
   }
 
   setProjectPositions() {
     this.p1_pos = document.getElementById("notaryWebsite").offsetTop - 200;
     this.p2_pos = document.getElementById("fitnessApp").offsetTop - 250;
     this.p3_pos = document.getElementById("chessGame").offsetTop - 300;
-    console.log(this.p1_pos, this.p2_pos, this.p3_pos);
   }
 
   checkPosition() {
-    var elements = document.querySelectorAll('.hidden');
+    // Check to animate section if scrolled into view
+    var elements = document.querySelectorAll('.hiddenUntilAnimation');
     for (var i=0; i < elements.length; i++) {
-      if (elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {
+      if (elements[i].id != 'projectControlBar' && elements[i].getBoundingClientRect().top - window.innerHeight <= 0) {
         elements[i].classList.add('fade-in-element')
-        elements[i].classList.remove('hidden');
+        elements[i].classList.remove('hiddenUntilAnimation');
       }
     }
-    var projects = document.getElementById('projects');
-    if (projects.getBoundingClientRect().top-150 > 0) {
+
+    // Show projectControlBar if in projct section
+    if (this.projectBarElement.classList.contains('hidden') && this.projectElement.getBoundingClientRect().top-150 <= 0) {
+      this.projectBarElement.classList.add('fade-in-element')
+      this.projectBarElement.classList.remove('hidden');
+    } else if (!this.projectBarElement.classList.contains('hidden') && this.projectElement.getBoundingClientRect().top-150 > 0) {
       document.getElementById('projectControlBar').classList.add('hidden');
-      document.getElementById('projectControlBar').classList.remove('fade-in-element-fast');
+      document.getElementById('projectControlBar').classList.remove('fade-in-element');
     }
+
+    // Control active project toggle
     var y_pos = window.scrollY;
     if (y_pos > this.p1_pos && y_pos < this.p2_pos) {
       this.setActiveProject("projectControl-notaryWebsite");
