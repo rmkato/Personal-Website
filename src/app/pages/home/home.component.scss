@@ -27,6 +27,13 @@
 	color: lightsalmon;
 }
 
+.profilePicture {
+	width: 100%; 
+	height: 100%; 
+	border-radius: 20px; 
+	max-width: 300px;
+}
+
 .image-carousel {
 	width: 75%;
 	margin: auto;
@@ -100,44 +107,42 @@
 	font-size: 1rem;
 }
 
-@media screen and (max-width: 420px) {
-	#header-br {
-		display: inline;
-	}
-	.image-carousel {
-		width: 90%;
-	}
-	.project-description {
-		width: 90%;
-	}
+#projectControlBar {
+	position: fixed; 
+	top: 25vh;
+	right: 10%;
 }
 
-@media screen and (max-width: 500px) {
-	#h-full {
-		display: none;
-	}
-	#h-shortened {
-		display: inline; 
-	}
+.projectControl {
+	height: 30px;
+	width: 8px;
+	margin-top: 15px;
+	background-color: lightslategray;
+	color: black;
 }
 
-@media screen and (max-width: 650px) {
-	.links {
-		z-index: 0;
-	}
+.projectControl:hover {
+	cursor: pointer;
 }
 
-@media screen and (max-width: 830px) {
-	.row .column {
-		width: 100%;
-	}
-	.hyphen {
-		display: none;
-	}
-	.row .col-4 {
-		width: 50%;
-		margin-bottom: 40px;
-	}
+@keyframes setActive {
+	from {background-color: lightslategray; transform: scale(.7,.7)}
+	to {background-color: royalblue}
+}
+
+@keyframes setInactive {
+	from {background-color: royalblue; transform: scale(.7,.7)}
+	to {background-color: lightslategray}
+}
+
+.active {
+	animation: setActive 0.5s;
+	background-color: royalblue;
+}
+
+.inactive {
+	animation: setInactive 0.5s;
+	background-color: lightslategray;
 }
 
 @media screen and (max-width: 980px) {
@@ -151,7 +156,7 @@
 		padding-left: 0; 
 	}
 	
-	.img1 {
+	.profilePicture {
 		float: none;
 		display: block;
 		margin: auto;
@@ -183,5 +188,48 @@
 	.content_container h3 {
 		margin-top: 20px; 
 		margin-bottom: 10px; 
+	}
+}
+
+@media screen and (max-width: 830px) {
+	.row .column {
+		width: 100%;
+	}
+	.hyphen {
+		display: none;
+	}
+	.row .col-4 {
+		width: 50%;
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.links {
+		z-index: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	#h-full {
+		display: none;
+	}
+	#h-shortened {
+		display: inline; 
+	}
+}
+
+@media screen and (max-width: 420px) {
+	#header-br {
+		display: inline;
+	}
+	#h-shortened {
+		display: none;
+	}
+	.image-carousel {
+		width: 90%;
+	}
+	.project-description {
+		width: 90%;
 	}
 }

@@ -15,11 +15,11 @@
     </div> 
 
     <!-- ABOUT Section --> 
-    <div id="about" class="content_container hidden" style="margin-top: 10px;">
+    <div id="about" class="content_container hiddenUntilAnimation" style="margin-top: 10px;">
         <h2>About Me</h2>
         <hr class="line-break"> 
         <div class="col1">
-            <img class="img1" src="https://ryankato.com/assets/profilepic.jpg" alt="picture" style="width: 100%; height: 100%; border-radius: 20px; max-width: 300px;">
+            <img class="profilePicture" src="assets/profilepic.jpg" alt="profilePicture">
         </div> 
         <div class="col2">
             <h3>.hello_world &emsp; &#123;</h3>
@@ -40,7 +40,7 @@
     </div>
 
     <!-- EDUCATION Section --> 
-    <div id="education" class="content_container hidden">
+    <div id="education" class="content_container hiddenUntilAnimation">
         <h2>Education</h2>
         <hr class="line-break">
         
@@ -69,44 +69,56 @@
     </div>
 
     <!-- PROJECTS Section --> 
-    <div id="projects" class="content_container hidden">
+    <div id="projects" class="content_container hiddenUntilAnimation" onload="setProjectPositions();">
         <h2>Projects</h2>
         <hr class="line-break">
+
+        <mat-button-toggle-group vertical=true id="projectControlBar" #group="matButtonToggleGroup" class="hidden">
+            <mat-button-toggle value="notaryWebsite" id="projectControl-notaryWebsite" class="projectControl" (click)="scrollProjectIntoView('notaryWebsite')"></mat-button-toggle>
+            <mat-button-toggle value="fitnessApp" id="projectControl-fitnessApp" class="projectControl" (click)="scrollProjectIntoView('fitnessApp')"></mat-button-toggle>
+            <mat-button-toggle value="chessGame" id="projectControl-chessGame" class="projectControl" (click)="scrollProjectIntoView('chessGame')"></mat-button-toggle>
+        </mat-button-toggle-group>
         
-        <h3 style="padding: 20px;">Mobile Notary Website</h3>
-        <div class="image-carousel">
-            <ng-image-slider [images]="notaryWebsiteProjectImages" [imageSize]="{width: '325px', height: '300px', space: 12}" [animationSpeed]="0.3" #nav></ng-image-slider>
-        </div>
-        <div class="project-description" style="margin-bottom: 100px;">
-            Using Angular and Javascript I created an interactive webpage for a recent UC Irvine Business major graduate to
-            advertise her notary services online. The website has successfully stimulated business opportunities for the 
-            client and allowed people to utilize her services. 
-            <br><br>
-            <a href="http://otsmobilenotary.com/" target="_blank">otsmobilenotary.com</a>
+        <div id="notaryWebsite">
+            <h3 style="padding: 20px;">Mobile Notary Website</h3>
+            <div class="image-carousel">
+                <ng-image-slider [images]="notaryWebsiteProjectImages" [imageSize]="{width: '325px', height: '300px', space: 12}" [animationSpeed]="0.3" #nav></ng-image-slider>
+            </div>
+            <div class="project-description" style="margin-bottom: 100px;">
+                Using Angular and Javascript I created an interactive webpage for a recent UC Irvine Business major graduate to
+                advertise her notary services online. The website has successfully stimulated business opportunities for the 
+                client and allowed people to utilize her services. 
+                <br><br>
+                <a href="http://otsmobilenotary.com/" target="_blank">otsmobilenotary.com</a>
+            </div>
         </div>
         <hr> 
 
-        <h3 style="padding: 20px;">Snapchat Fitness Stickers App</h3>
-        <div class="image-carousel">
-            <ng-image-slider [images]="dataStickersProjectImages" [imageSize]="{width: '265px', height: '450px', space: 12}" [animationSpeed]="0.3" #nav></ng-image-slider>
-        </div>
-        <div class="project-description">
-            I worked with a team of undergraduate CS students under UC Irvine Informatics professor Daniel Epstein on a 
-            cross-platform application that allows users to create and customize data-driven stickers that can be exported 
-            to Snapchat in order to provide more context for stories and snaps. Data can be drawn from the user's Spotify 
-            and Google Fit/Apple Health applications. 
-            <br><br>
-            <a href="https://github.com/depstein/sticker-app" target="_blank">GitHub</a>
+        <div id="fitnessApp">
+            <h3 style="padding: 20px;">Snapchat Fitness Stickers App</h3>
+            <div class="image-carousel">
+                <ng-image-slider [images]="dataStickersProjectImages" [imageSize]="{width: '265px', height: '450px', space: 12}" [animationSpeed]="0.3" #nav></ng-image-slider>
+            </div>
+            <div class="project-description">
+                I worked with a team of undergraduate CS students under UC Irvine Informatics professor Daniel Epstein on a 
+                cross-platform application that allows users to create and customize data-driven stickers that can be exported 
+                to Snapchat in order to provide more context for stories and snaps. Data can be drawn from the user's Spotify 
+                and Google Fit/Apple Health applications. 
+                <br><br>
+                <a href="https://github.com/depstein/sticker-app" target="_blank">GitHub</a>
+            </div>
         </div>
         <hr>
-        
-        <h3 style="padding: 20px;">Chess Game</h3>
-        <img src="assets/chessgame.png" alt="chessgame"> 
-        <div class="project-description">
-            I wrote a fully-functional chess game in Java using a JFrame GUI. In the future my plan is to further the 
-            develop the game and implement a minimax algorithm to create an intelligent chess AI to play against. 
-            <br><br>
-            <a href="https://github.com/rmkato/Chess-Game" target="_blank">GitHub</a>
+
+        <div id="chessGame">
+            <h3 style="padding: 20px;">Chess Game</h3>
+            <img src="assets/chessgame.png" alt="chessgame"> 
+            <div class="project-description">
+                I wrote a fully-functional chess game in Java using a JFrame GUI. In the future my plan is to further the 
+                develop the game and implement a minimax algorithm to create an intelligent chess AI to play against. 
+                <br><br>
+                <a href="https://github.com/rmkato/Chess-Game" target="_blank">GitHub</a>
+            </div>
         </div>
     </div>
 
