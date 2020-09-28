@@ -69,14 +69,14 @@
     </div>
 
     <!-- PROJECTS Section --> 
-    <div id="projects" class="content_container hidden">
+    <div id="projects" class="content_container hidden" onload="setProjectPositions();">
         <h2>Projects</h2>
         <hr class="line-break">
 
         <mat-button-toggle-group vertical=true id="projectControlBar" #group="matButtonToggleGroup" class="hidden">
-            <mat-button-toggle value="notaryWebsite" id="projectControl-notaryWebsite" class="projectControl" (click)="projectControlSelector('notaryWebsite')"></mat-button-toggle>
-            <mat-button-toggle value="fitnessApp" id="projectControl-fitnessApp" class="projectControl" (click)="projectControlSelector('fitnessApp')"></mat-button-toggle>
-            <mat-button-toggle value="chessGame" id="projectControl-chessGame" class="projectControl" (click)="projectControlSelector('chessGame')"></mat-button-toggle>
+            <mat-button-toggle value="notaryWebsite" id="projectControl-notaryWebsite" class="projectControl" (click)="scrollProjectIntoView('notaryWebsite')"></mat-button-toggle>
+            <mat-button-toggle value="fitnessApp" id="projectControl-fitnessApp" class="projectControl" (click)="scrollProjectIntoView('fitnessApp')"></mat-button-toggle>
+            <mat-button-toggle value="chessGame" id="projectControl-chessGame" class="projectControl" (click)="scrollProjectIntoView('chessGame')"></mat-button-toggle>
         </mat-button-toggle-group>
         
         <div id="notaryWebsite">

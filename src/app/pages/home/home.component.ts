@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resolve } from 'url';
 
 @Component({
   selector: 'app-home',
@@ -61,14 +62,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setProjectPositions();
-    this.checkPosition();
+    setTimeout(function() {
+      this.setProjectPositions();
+      this.checkPosition();
+    }.bind(this), 1000);
   }
 
   setProjectPositions() {
-    this.p1_pos = document.getElementById("notaryWebsite").offsetTop;
-    this.p2_pos = document.getElementById("fitnessApp").offsetTop - 100;
-    this.p3_pos = document.getElementById("chessGame").offsetTop + 350;
+    this.p1_pos = document.getElementById("notaryWebsite").offsetTop - 200;
+    this.p2_pos = document.getElementById("fitnessApp").offsetTop - 250;
+    this.p3_pos = document.getElementById("chessGame").offsetTop - 300;
+    console.log(this.p1_pos, this.p2_pos, this.p3_pos);
   }
 
   checkPosition() {
@@ -96,10 +100,6 @@ export class HomeComponent implements OnInit {
     } else if (y_pos > this.p3_pos) {
       this.setActiveProject("projectControl-chessGame");
     }
-  }
-
-  projectControlSelector(id) {
-    this.scrollProjectIntoView(id);
   }
 
   scrollIntoView(id) {
