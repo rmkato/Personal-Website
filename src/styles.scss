@@ -79,6 +79,10 @@ main {
 	animation: fade-in 0.5s;
 }
 
+.hiddenUntilAnimation {
+	opacity: 0;
+}
+
 .hidden {
 	opacity: 0;
 }
