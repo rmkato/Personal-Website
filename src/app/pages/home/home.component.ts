@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   projectBarVisible: boolean;
+  p1_pos: number;
+  p2_pos: number;
+  p3_pos: number;
 
   notaryWebsiteProjectImages: Array<object> = [{
     image: 'assets/NotaryWebsite.jpg',
@@ -53,12 +56,19 @@ export class HomeComponent implements OnInit {
   }];
 
   constructor() {
-    window.addEventListener('scroll', this.checkPosition);
+    window.addEventListener('scroll', () => this.checkPosition());
     this.projectBarVisible = false;
   }
 
   ngOnInit() {
+    this.setProjectPositions();
     this.checkPosition();
+  }
+
+  setProjectPositions() {
+    this.p1_pos = document.getElementById("notaryWebsite").offsetTop;
+    this.p2_pos = document.getElementById("fitnessApp").offsetTop - 100;
+    this.p3_pos = document.getElementById("chessGame").offsetTop + 350;
   }
 
   checkPosition() {
@@ -78,11 +88,18 @@ export class HomeComponent implements OnInit {
       document.getElementById('projectControlBar').classList.add('hidden');
       document.getElementById('projectControlBar').classList.remove('fade-in-element-fast');
     }
+    var y_pos = window.scrollY;
+    if (y_pos > this.p1_pos && y_pos < this.p2_pos) {
+      this.setActiveProject("projectControl-notaryWebsite");
+    } else if (y_pos > this.p2_pos && y_pos < this.p3_pos) {
+      this.setActiveProject("projectControl-fitnessApp");
+    } else if (y_pos > this.p3_pos) {
+      this.setActiveProject("projectControl-chessGame");
+    }
   }
 
   projectControlSelector(id) {
     this.scrollProjectIntoView(id);
-    this.setActiveProject('projectControl-'+id);
   }
 
   scrollIntoView(id) {
